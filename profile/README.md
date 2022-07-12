@@ -1,20 +1,21 @@
 # Getting Started
 
-The course uses Python with the Visual Studio Code (VSCode) integrated development environment (IDE). In the following we explain how to set-up your development environment, and how to get started with the assignments. The setup and assignments are tested for Windows 10 and the respective versions as mentioned below. Unfortunately we cannot support other versions or operating systems.
+The course uses Python with the Visual Studio Code (VSCode) integrated development environment (IDE) and Anaconda package manager. In the following we explain how to set-up your development environment, and how to get started with the assignments. The setup and assignments are tested for Windows 10 and the respective versions as mentioned below. Unfortunately we cannot support other versions or operating systems. In case of problems, please first consult the FAQ below.
 
 
 _Install VSCode_
 
-VSCode is a popular Integrated Development Environment (IDE) for many programming languages. VSCode incorporates auto-completion, syntax and style-checks, Git integration and many other handy features. Navigate to `https://code.visualstudio.com/`, and install the latest version for Windows. When opening VSCode for the first time, choose "Browse Language Extensions" and install the extensions for Python and Jupyter.
+VSCode is a popular Integrated Development Environment (IDE) for many programming languages. VSCode incorporates auto-completion, syntax and style-checks, Git integration and many other handy features. Navigate to `https://code.visualstudio.com/`, and install the latest version for Windows (if not already installed). When opening VSCode for the first time, choose "Browse Language Extensions" and install the extensions for Python and Jupyter.
 
 
 _Install Anaconda_
-Anaconda is a package manager and environment manager for Python.
-- Navigate to `https://www.anaconda.com/products/distribution` and install the latest Anaconda distribution (Python 3.9, 64-Bit Graphical Installer). Follow the instructions of the setup process.
-- Open Ananconda Navigator from the Start Menu to finalize the setup.
-- Open Anaconda Powershell Prompt from the Start Menu and type `conda init powershell` to be able to open Anaconda from PowerShell.
-- You may get an error that running scripts is disabled on this system. In this case, open Windows PowerShell (from the start menu), and right-click to run as an administrator. In the shell terminal, type `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command sets permissions to run scripts on you machine. Then retry the step above.
-- Check whether your system supports longer file paths. By default Windows only allows file paths up to 260 characters, which is insufficient for some of the packages we will use. In order to check/change this, open the Registry Editor and navigate to HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Control -> FileSystem and make sure the LongPathsEnabled item is set to 1.
+
+Anaconda is a package manager and environment manager for Python. TUe laptops already come with Anaconda Navigator installed. You can verify by opening a PowerShell from the Start Menu and typing `conda --version`, which should return the version number. If you do not have Anaconda, navigate to `https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links` and install the latest Miniconda3 for Windows. Then open Anaconda Prompt from the Start Menu and type `conda init powershell` to be able to open Anaconda from Windows PowerShell (which will be handy). Verify your installation by typing  `conda --version` and `python --version`, which should return your conda version and Python version for the base environment.
+
+
+_System Paths_
+
+Check whether your system supports long file paths. By default Windows only allows file paths up to 260 characters, which is insufficient for some of the packages that we will use. In order to check/change this, open the Registry Editor and navigate to HKEY_LOCAL_MACHINE -> SYSTEM -> CurrentControlSet -> Control -> FileSystem and make sure the LongPathsEnabled item is set to 1.
 
 
 _Install Git Bash for Windows_
@@ -34,3 +35,26 @@ With your environment setup, you can start the assignments. The assignments are 
 1. A Git and Github tutorial, where you'll learn to use basic version control (individually, week 1);
 2. The development and training of an application that assists realtors in valuating housing prices (individually, week 2,3);
 3. The development and training of a pokerbot, an agent that plays Kuhn poker against fellow students (group, week 4-8).
+
+
+# FAQ
+
+
+_I'm getting a "running scripts is disabled on this system" error._<br>
+Open Windows PowerShell (from the start menu), and right-click to run as an administrator. In the shell terminal, type `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command sets permissions to run scripts on you machine.
+
+
+_Where do we need to hand-in our projects?_<br>
+There is no need to "hand-in" your project as such; we will grade your project as-is on GitHub, at the time of the deadline. Just make sure that you push all your changes by the time of the deadline. After grading your work we will offer feedback through a pull-request.
+
+
+_I used the HTTPS link to clone a repository because the SSH link failed for me, is this okay?_<br>
+This is fine, but it will request your password every time you want to commit your changes, which might be annoying. SSH is definitely the better option, but first you need to create SSH keys and setup your GitHub account (see above).
+
+
+_Is it sufficient to explain our choices in .ipynb (notebook) files, or should we only work in the .py (python source) files?_<br>
+The notebook files in the assignment repositories offer guidance and an environment to experiment. However, the .ipynb files are not graded. Only the .py files are graded, so complete your assignments there.
+
+
+_I found a great resource, can I directly copy code from there?_<br>
+No, the TU/e code of conduct applies to code in the same way it applies to written text. We expect students to take inspiration from sources on the internet, but also to evaluate them critically and submit their own interpretation, with a reference to the original source material. Also, if you're unsure, then please ask.
